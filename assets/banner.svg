@@ -1,199 +1,184 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050814" />
-      <stop offset="50%" stop-color="#0a1226" />
-      <stop offset="100%" stop-color="#04060d" />
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="50%" stop-color="#070a10" />
+      <stop offset="100%" stop-color="#04060a" />
     </linearGradient>
 
-    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00e5ff" />
-      <stop offset="50%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#818cf8" />
-    </linearGradient>
+    <!-- Subtle Radial Glow behind UI card -->
+    <radialGradient id="cardGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
+    </radialGradient>
 
-    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff9f1c" />
-      <stop offset="100%" stop-color="#ff3838" />
-    </linearGradient>
-
-    <linearGradient id="gridGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.25" />
-      <stop offset="80%" stop-color="#00e5ff" stop-opacity="0.02" />
-      <stop offset="100%" stop-color="#000" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Filters -->
-    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <filter id="glowOrange" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <!-- Speed Lines Pattern -->
-    <pattern id="dotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#00e5ff" fill-opacity="0.08" />
+    <!-- Clean Tech Grid Pattern -->
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1" />
     </pattern>
+
+    <!-- UI Card Gradient -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0b0f19" />
+    </linearGradient>
+
+    <linearGradient id="wheelRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
   </defs>
 
   <style>
-    @keyframes pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 0.3; } }
-    @keyframes dash { to { stroke-dashoffset: -100; } }
-    .title-font { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Montserrat', 'Roboto', sans-serif; font-weight: 900; }
-    .sub-font { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; }
-    .mono-font { font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
   </style>
 
-  <!-- Background -->
-  <rect width="1280" height="420" fill="url(#bgGrad)" />
-  <rect width="1280" height="420" fill="url(#dotPattern)" />
+  <!-- Container Base -->
+  <rect width="1200" height="360" fill="url(#bg)" />
+  <rect width="1200" height="360" fill="url(#grid)" />
 
-  <!-- Outer Neon Border Frame -->
-  <rect x="12" y="12" width="1256" height="396" rx="14" fill="none" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="1.5" />
-  <rect x="16" y="16" width="1248" height="388" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+  <!-- Subtle Ambient Glow -->
+  <circle cx="920" cy="180" r="220" fill="url(#cardGlow)" />
 
-  <!-- Subtle Perspective Road Grid on Right Bottom -->
-  <g opacity="0.75">
-    <line x1="500" y1="410" x2="800" y2="240" stroke="#00e5ff" stroke-opacity="0.18" stroke-width="1" />
-    <line x1="640" y1="410" x2="820" y2="240" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="1.5" />
-    <line x1="780" y1="410" x2="840" y2="240" stroke="#ff9f1c" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="8 8" />
-    <line x1="920" y1="410" x2="860" y2="240" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="1.5" />
-    <line x1="1060" y1="410" x2="880" y2="240" stroke="#00e5ff" stroke-opacity="0.18" stroke-width="1" />
-    <line x1="1200" y1="410" x2="900" y2="240" stroke="#00e5ff" stroke-opacity="0.12" stroke-width="1" />
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="1198" height="358" rx="12" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" />
 
-    <!-- Horizon Line Glow -->
-    <ellipse cx="850" cy="240" rx="280" ry="1.5" fill="#00e5ff" opacity="0.3" filter="url(#glowCyan)" />
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 0)">
-    <!-- Category Badge -->
-    <g transform="translate(0, 68)">
-      <rect x="0" y="0" width="310" height="28" rx="14" fill="#00e5ff" fill-opacity="0.1" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="1" />
-      <circle cx="16" cy="14" r="5" fill="#39ff88" filter="url(#glowCyan)" />
-      <text x="30" y="19" class="mono-font" font-size="11.5" font-weight="700" fill="#00e5ff" letter-spacing="1.5">COMPUTER VISION • 3D SIMULATOR</text>
+  <!-- ================= LEFT COLUMN: BRAND & INFORMATION ================= -->
+  <g transform="translate(64, 0)">
+    
+    <!-- Version & Status Pill -->
+    <g transform="translate(0, 52)">
+      <rect width="254" height="26" rx="13" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-width="1" />
+      <circle cx="14" cy="13" r="4" fill="#10b981" />
+      <text x="26" y="17" class="font-mono" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.5">OPEN SOURCE • COLAB READY</text>
     </g>
 
     <!-- Main Title -->
-    <g transform="translate(0, 155)">
-      <text x="0" y="0" class="title-font" font-size="58" font-weight="900" fill="url(#cyanGlow)" letter-spacing="2" filter="url(#glowCyan)">CARGAMEZ VISION</text>
+    <g transform="translate(0, 126)">
+      <text x="0" y="0" class="font-sans" font-size="46" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+        CargamezVision
+      </text>
     </g>
 
     <!-- Subtitle -->
-    <g transform="translate(0, 195)">
-      <text x="0" y="0" class="sub-font" font-size="20" fill="#e2e8f0" font-weight="600" letter-spacing="0.3">
-        Real-Time Hand Gesture Controlled 3D Racing Experience
+    <g transform="translate(0, 162)">
+      <text x="0" y="0" class="font-sans" font-size="17" font-weight="400" fill="#94a3b8">
+        Real-time dual-hand gesture controlled 3D racing simulator.
+      </text>
+      <text x="0" y="24" class="font-sans" font-size="14" font-weight="400" fill="#64748b">
+        Powered by Google MediaPipe vision tracking and Three.js WebGL engine.
       </text>
     </g>
 
-    <!-- Descriptive Bullets / Feature Highlights -->
-    <g transform="translate(0, 232)">
-      <text x="0" y="0" class="sub-font" font-size="14.5" fill="#94a3b8" letter-spacing="0.2">
-        Drive directly in Google Colab using just your webcam — no keyboard, no controller required.
-      </text>
-      <text x="0" y="24" class="sub-font" font-size="14.5" fill="#64748b" letter-spacing="0.2">
-        Powered by <tspan fill="#38bdf8" font-weight="600">MediaPipe Hands 21-Keypoint Tracking</tspan> &amp; <tspan fill="#ff9f1c" font-weight="600">Three.js WebGL Engine</tspan>
-      </text>
-    </g>
-
-    <!-- Tech Feature Badges Row -->
-    <g transform="translate(0, 310)">
-      <!-- Badge 1: Colab Ready -->
+    <!-- Specs / Architecture Tags -->
+    <g transform="translate(0, 246)">
+      <!-- Tag 1 -->
       <g transform="translate(0, 0)">
-        <rect width="138" height="34" rx="7" fill="#132338" stroke="#00e5ff" stroke-opacity="0.35" stroke-width="1" />
-        <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#38bdf8">☁️ Google Colab</text>
+        <rect width="118" height="30" rx="6" fill="#111827" stroke="#1f2937" stroke-width="1" />
+        <text x="59" y="19" class="font-mono" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">Google Colab</text>
       </g>
+      <!-- Tag 2 -->
+      <g transform="translate(126, 0)">
+        <rect width="138" height="30" rx="6" fill="#111827" stroke="#1f2937" stroke-width="1" />
+        <text x="69" y="19" class="font-mono" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">MediaPipe Hands</text>
+      </g>
+      <!-- Tag 3 -->
+      <g transform="translate(272, 0)">
+        <rect width="108" height="30" rx="6" fill="#111827" stroke="#1f2937" stroke-width="1" />
+        <text x="54" y="19" class="font-mono" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">Three.js 3D</text>
+      </g>
+      <!-- Tag 4 -->
+      <g transform="translate(388, 0)">
+        <rect width="128" height="30" rx="6" fill="#111827" stroke="#1f2937" stroke-width="1" />
+        <text x="64" y="19" class="font-mono" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">Web Audio API</text>
+      </g>
+    </g>
 
-      <!-- Badge 2: MediaPipe AI -->
-      <g transform="translate(150, 0)">
-        <rect width="130" height="34" rx="7" fill="#132338" stroke="#00e5ff" stroke-opacity="0.35" stroke-width="1" />
-        <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#38bdf8">🖐️ MediaPipe AI</text>
-      </g>
-
-      <!-- Badge 3: Three.js 3D -->
-      <g transform="translate(292, 0)">
-        <rect width="120" height="34" rx="7" fill="#132338" stroke="#ff9f1c" stroke-opacity="0.35" stroke-width="1" />
-        <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#ff9f1c">🎮 Three.js 3D</text>
-      </g>
-
-      <!-- Badge 4: Web Audio Synth -->
-      <g transform="translate(424, 0)">
-        <rect width="135" height="34" rx="7" fill="#132338" stroke="#39ff88" stroke-opacity="0.35" stroke-width="1" />
-        <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#39ff88">🔊 Audio Engine</text>
-      </g>
-
-      <!-- Badge 5: Zero Install -->
-      <g transform="translate(571, 0)">
-        <rect width="118" height="34" rx="7" fill="#132338" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
-        <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#cbd5e1">⚡ Zero Config</text>
-      </g>
+    <!-- Minimal bottom link text -->
+    <g transform="translate(0, 308)">
+      <text x="0" y="0" class="font-mono" font-size="11" fill="#475569">Zero drivers • Zero hardware controllers • Runs in any browser</text>
     </g>
   </g>
 
-  <!-- Right Side Interactive Graphic: HUD & Gesture Steering Wheel Visualizer -->
-  <g transform="translate(980, 205)">
-    <!-- Outer Glow Ambient -->
-    <circle cx="0" cy="0" r="145" fill="#00e5ff" fill-opacity="0.04" filter="url(#glowCyan)" />
-
-    <!-- Circular HUD Ring (Speedo / Steering Base) -->
-    <circle cx="0" cy="0" r="125" fill="#040b17" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="3" />
-    <circle cx="0" cy="0" r="110" fill="none" stroke="#1e293b" stroke-width="8" />
+  <!-- ================= RIGHT COLUMN: SLEEK MINIMALIST UI CARD ================= -->
+  <g transform="translate(680, 42)">
+    <!-- Window Outer Container -->
+    <rect width="456" height="276" rx="10" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1" />
     
-    <!-- Active Speed Arc (Glowing Cyan to Orange) -->
-    <path d="M -77.7 77.7 A 110 110 0 1 1 77.7 77.7" fill="none" stroke="url(#cyanGlow)" stroke-width="8" stroke-linecap="round" filter="url(#glowCyan)" />
+    <!-- Window Header Bar -->
+    <path d="M 0 10 C 0 4.477 4.477 0 10 0 L 446 0 C 451.523 0 456 4.477 456 10 L 456 34 L 0 34 Z" fill="#0d131f" />
+    <line x1="0" y1="34" x2="456" y2="34" stroke="#1e293b" stroke-width="1" />
+    
+    <!-- Window Window Controls (Mac dots) -->
+    <circle cx="18" cy="17" r="4.5" fill="#ef4444" fill-opacity="0.75" />
+    <circle cx="32" cy="17" r="4.5" fill="#f59e0b" fill-opacity="0.75" />
+    <circle cx="46" cy="17" r="4.5" fill="#10b981" fill-opacity="0.75" />
+    
+    <text x="228" y="21" class="font-mono" font-size="10.5" font-weight="500" fill="#64748b" text-anchor="middle">telemetry.live // 60_fps</text>
 
-    <!-- Steering Wheel Geometry (Angled 18 deg like in game) -->
-    <g transform="rotate(-15)">
-      <!-- Wheel Outer Rim -->
-      <circle cx="0" cy="0" r="82" fill="none" stroke="#e0f2fe" stroke-width="7" filter="url(#glowCyan)" />
-      <!-- Wheel Inner Ring -->
-      <circle cx="0" cy="0" r="75" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" />
-      <circle cx="0" cy="0" r="89" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" />
-      <!-- Spokes -->
-      <line x1="-82" y1="0" x2="82" y2="0" stroke="#00e5ff" stroke-width="7" />
-      <line x1="0" y1="0" x2="0" y2="82" stroke="#00e5ff" stroke-width="7" />
-      <!-- Center Hub -->
-      <circle cx="0" cy="0" r="22" fill="#0b172a" stroke="#00e5ff" stroke-width="3" />
-      <!-- Top Alignment Marker (Red) -->
-      <rect x="-4" y="-89" width="8" height="14" fill="#ff3838" rx="2" />
-      <!-- Grip Hand Anchors (Cyan/Neon dots) -->
-      <circle cx="-82" cy="0" r="10" fill="#00e5ff" filter="url(#glowCyan)" />
-      <circle cx="82" cy="0" r="10" fill="#00e5ff" filter="url(#glowCyan)" />
-    </g>
+    <!-- Card Content Area -->
+    <g transform="translate(24, 52)">
 
-    <!-- Speedometer Readout in Center -->
-    <text x="0" y="-8" class="title-font" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">218</text>
-    <text x="0" y="8" class="mono-font" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="1.5">KM / H</text>
-    <text x="0" y="24" class="title-font" font-size="13" font-weight="800" fill="#ff9f1c" text-anchor="middle">GEAR 5</text>
+      <!-- Left Sub-card: Interactive Gesture Wheel Diagram -->
+      <g transform="translate(0, 0)">
+        <rect width="230" height="186" rx="8" fill="#080c14" stroke="#172033" stroke-width="1" />
+        
+        <!-- Subtle crosshair grid in the viewer -->
+        <line x1="115" y1="16" x2="115" y2="170" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="2 4" />
+        <line x1="16" y1="93" x2="214" y2="93" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="2 4" />
 
-    <!-- HUD Telemetry Badges Around Wheel -->
-    <g transform="translate(0, 115)">
-      <rect x="-65" y="-12" width="130" height="24" rx="12" fill="#061224" stroke="#39ff88" stroke-width="1.2" />
-      <circle cx="-48" cy="0" r="3.5" fill="#39ff88" filter="url(#glowCyan)" />
-      <text x="12" y="4" class="mono-font" font-size="10" font-weight="700" fill="#39ff88" text-anchor="middle">TRACKING: 60 FPS</text>
-    </g>
+        <!-- Minimalist Steering Wheel Graphic (Tilted -12 deg) -->
+        <g transform="translate(115, 93) rotate(-12)">
+          <!-- Outer Wheel -->
+          <circle cx="0" cy="0" r="54" fill="none" stroke="#1e293b" stroke-width="7" />
+          <circle cx="0" cy="0" r="54" fill="none" stroke="url(#wheelRim)" stroke-width="4" stroke-dasharray="60 25 60 25" />
+          <!-- Spokes -->
+          <line x1="-54" y1="0" x2="54" y2="0" stroke="#38bdf8" stroke-width="3" />
+          <line x1="0" y1="0" x2="0" y2="54" stroke="#38bdf8" stroke-width="3" />
+          <!-- Hub -->
+          <circle cx="0" cy="0" r="14" fill="#0b111e" stroke="#38bdf8" stroke-width="2" />
+          
+          <!-- Left Grip Point Indicator -->
+          <circle cx="-54" cy="0" r="7" fill="#0284c7" />
+          <circle cx="-54" cy="0" r="3" fill="#ffffff" />
+          
+          <!-- Right Grip Point Indicator -->
+          <circle cx="54" cy="0" r="7" fill="#0284c7" />
+          <circle cx="54" cy="0" r="3" fill="#ffffff" />
+        </g>
 
-    <!-- Gesture Chip Left -->
-    <g transform="translate(-145, -75)">
-      <rect width="84" height="22" rx="4" fill="#091427" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="1" />
-      <text x="42" y="15" class="mono-font" font-size="9.5" font-weight="700" fill="#38bdf8" text-anchor="middle">✊ LEFT FIST</text>
-    </g>
+        <!-- Live angle tag -->
+        <rect x="80" y="152" width="70" height="20" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="0.8" />
+        <text x="115" y="166" class="font-mono" font-size="10" font-weight="600" fill="#38bdf8" text-anchor="middle">ANGLE -12°</text>
+      </g>
 
-    <!-- Gesture Chip Right -->
-    <g transform="translate(62, -75)">
-      <rect width="84" height="22" rx="4" fill="#091427" stroke="#ff9f1c" stroke-opacity="0.6" stroke-width="1" />
-      <text x="42" y="15" class="mono-font" font-size="9.5" font-weight="700" fill="#ff9f1c" text-anchor="middle">☝️ NITRO UP</text>
+      <!-- Right Sub-panel: Real-Time Telemetry Stats -->
+      <g transform="translate(242, 0)">
+        
+        <!-- Metric Box 1: Speed -->
+        <g transform="translate(0, 0)">
+          <rect width="166" height="54" rx="6" fill="#080c14" stroke="#172033" stroke-width="1" />
+          <text x="14" y="20" class="font-mono" font-size="9.5" font-weight="600" fill="#64748b">SPEED</text>
+          <text x="14" y="44" class="font-sans" font-size="22" font-weight="800" fill="#ffffff">218 <tspan font-size="11" font-weight="600" fill="#0284c7">KM/H</tspan></text>
+        </g>
+
+        <!-- Metric Box 2: Gesture Mode -->
+        <g transform="translate(0, 64)">
+          <rect width="166" height="54" rx="6" fill="#080c14" stroke="#172033" stroke-width="1" />
+          <text x="14" y="20" class="font-mono" font-size="9.5" font-weight="600" fill="#64748b">INPUT STATE</text>
+          <text x="14" y="42" class="font-mono" font-size="13" font-weight="700" fill="#10b981">✊ FISTS // GAS</text>
+        </g>
+
+        <!-- Metric Box 3: Engine State -->
+        <g transform="translate(0, 128)">
+          <rect width="166" height="58" rx="6" fill="#080c14" stroke="#172033" stroke-width="1" />
+          <text x="14" y="20" class="font-mono" font-size="9.5" font-weight="600" fill="#64748b">GEAR &amp; NITRO</text>
+          <text x="14" y="42" class="font-mono" font-size="13" font-weight="700" fill="#f59e0b">GEAR 5 • 92%</text>
+        </g>
+
+      </g>
     </g>
   </g>
 </svg>
