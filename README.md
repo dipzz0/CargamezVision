@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="assets/banner.svg" alt="CargamezVision Banner" width="100%">
+</p>
+
+<p align="center">
   <a href="https://colab.research.google.com/github/dipzz0/CargamezVision/blob/main/CargamezVision.ipynb" target="_blank"><img src="https://img.shields.io/badge/Open_In_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Open In Colab"></a>
   <img src="https://img.shields.io/badge/Vision-MediaPipe-00e5ff?style=for-the-badge&logo=google&logoColor=white" alt="MediaPipe">
   <img src="https://img.shields.io/badge/3D_Engine-Three.js-ff9f1c?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js">
