@@ -4,12 +4,12 @@
 
 <p align="center">
   <a href="https://colab.research.google.com/github/dipzz0/CargamezVision/blob/main/CargamezVision.ipynb" target="_blank">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="32">
+    <img src="https://img.shields.io/badge/Open_In_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Open In Colab">
   </a>
-  <img src="https://img.shields.io/badge/Computer_Vision-MediaPipe_Hands-00e5ff?style=for-the-badge&logo=google" alt="MediaPipe">
-  <img src="https://img.shields.io/badge/3D_Engine-Three.js_WebGL-ff9f1c?style=for-the-badge&logo=three.js" alt="Three.js">
-  <img src="https://img.shields.io/badge/Audio-Web_Audio_Synth-39ff88?style=for-the-badge" alt="Web Audio API">
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Vision-MediaPipe-00e5ff?style=for-the-badge&logo=google&logoColor=white" alt="MediaPipe">
+  <img src="https://img.shields.io/badge/3D_Engine-Three.js-ff9f1c?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js">
+  <img src="https://img.shields.io/badge/Audio-Web_Audio-39ff88?style=for-the-badge" alt="Web Audio API">
+  <img src="https://img.shields.io/badge/License-MIT-0284c7?style=for-the-badge" alt="License">
 </p>
 
 ---
